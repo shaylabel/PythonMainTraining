@@ -1,0 +1,25 @@
+def question_3():
+    """
+    3.	Write a function to find the longest common prefix
+        string amongst an array of strings.
+        If there is no common prefix, return an empty string
+
+            Example 1:
+            Input: strs = ["flower", "flow", "flight"]
+            Output: "fl"
+
+            Example 2:
+            Input: strs = ["dog","racecar", "tab"]
+            Output: ""
+            Explanation: There is no common prefix the input strings.
+            """
+
+    strs = ["flower", "flow", "flight"]
+
+    def prefix(strs):
+       _min = strs[1]
+
+       for str in strs:
+           for i in range(_min):
+               char_to_compare = _min[i]
+                if char_to_compar
