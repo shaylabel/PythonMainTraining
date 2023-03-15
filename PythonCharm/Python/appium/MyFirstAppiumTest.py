@@ -16,7 +16,7 @@ appium_server_url = 'http://127.0.0.1:4723/wd/hub'
 class TestAppium(unittest.TestCase):
     def setUp(self) :
         self.driver = webdriver.Remote(appium_server_url, capabilities)
-        # self.driver.implicitly_wait(10)
+        self.driver.implicitly_wait(10)
     def tearDown(self) :
         if self.driver:
             self.driver.quit()
