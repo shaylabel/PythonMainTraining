@@ -25,13 +25,37 @@ class TestAppium(unittest.TestCase):
         if self.driver:
             self.driver.quit()
 
-    def test_calculate_click(self) :
+    def test_calculate_tap(self) :
         print('into test')
         digit2 = self.driver.find_element(by=AppiumBy.ID, value='com.android.calculator2:id/digit_2')
         digit1 = self.driver.find_element(By.ID, 'com.android.calculator2:id/digit_1')
-        digit1.click()
-        digit2.click()
-        time.sleep(3)
+
+        actions = TouchAction(self.driver)
+        actions.tap(digit2)
+        actions.tap(digit1)
+        actions.perform()
+
+        actions.tap(digit1)
+        actions.long_press(digit2)
+        actions.double_tap(digit2)
+        actions.perform()
+
+        actions.move_to(digit2,100.50)  # swipe right / up
+
+
+
+
+        print('test stop')
+
+    def test_swipe(self):
+        print('into swipe test')
+        digit2 = self.driver.find_element(by=AppiumBy.ID, value='com.android.calculator2:id/digit_2')
+
+        actions = TouchAction(self.driver)
+        actions.move_to(digit2,100.50)
+        actions.perform()
+        print ('test stop')
+        digit1 = self.driver.find_element(By.ID, 'com.android.calculator2:id/digit_1')
 
 
         print('test stop')

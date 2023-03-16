@@ -25,14 +25,13 @@ class TestAppium(unittest.TestCase):
         if self.driver:
             self.driver.quit()
 
-    def test_calculate_click(self) :
+    def test_calculate_tap(self) :
         print('into test')
-        digit2 = self.driver.find_element(by=AppiumBy.ID, value='com.android.calculator2:id/digit_2')
-        digit1 = self.driver.find_element(By.ID, 'com.android.calculator2:id/digit_1')
-        digit1.click()
-        digit2.click()
-        time.sleep(3)
+
+
 
 
         print('test stop')
+
+
 
