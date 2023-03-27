@@ -10,6 +10,7 @@ class LoginPage(object):
     def __init__(self, driver):
         self.driver = driver
 
+# login into system
     def login(self,user_pattern,pw_pattern):
         print ('Try to login with user = '+ user_pattern+', pw = '+pw_pattern)
         user = self.driver.find_element(*LoginPageLocators.USER)
