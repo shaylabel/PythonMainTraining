@@ -20,7 +20,7 @@ def setup(request):
 
 
 @pytest.mark.usefixtures("setup")
-class TestExampleOne:
+class TestAddModel:
     def test_create_model(self):
         login = LoginPage(self.driver)
         welcome = WelcomePage(self.driver)
@@ -28,3 +28,10 @@ class TestExampleOne:
         login.login("kobyd100@gmail.com","zxcvASDF12!@")
         welcome.click_on_side_menu(*WelcomePage.MODElS_SIDE_BAR)
 
+class TestDeleteModel:
+    def test_create_model(self):
+        login = LoginPage(self.driver)
+        welcome = WelcomePage(self.driver)
+
+        login.login("kobyd100@gmail.com","zxcvASDF12!@")
+        welcome.click_on_side_menu(*WelcomePage.MODElS_SIDE_BAR)
