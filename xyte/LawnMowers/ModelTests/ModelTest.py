@@ -19,7 +19,7 @@ def setup(request):
     driver.close()
 
 
-@pytest.mark.usefixtures("setup")   # define here at class level,can be define at test level as well
+@pytest.mark.usefixtures("setup")
 class TestExampleOne:
     def test_create_model(self):
         login = LoginPage(self.driver)
