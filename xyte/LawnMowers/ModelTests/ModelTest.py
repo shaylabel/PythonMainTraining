@@ -3,6 +3,7 @@ from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 
 from xyte.LawnMowers.Pages.LoginPage import LoginPage
+from xyte.LawnMowers.Pages.ModelPage import ModelPage
 from xyte.LawnMowers.Pages.WelcomePage import WelcomePage
 
 
@@ -28,10 +29,11 @@ class TestAddModel:
         login.login("kobyd100@gmail.com","zxcvASDF12!@")
         welcome.click_on_side_menu(*WelcomePage.MODElS_SIDE_BAR)
 
-class TestDeleteModel:
-    def test_create_model(self):
+    def test_delete_model(self):
         login = LoginPage(self.driver)
         welcome = WelcomePage(self.driver)
+        model = ModelPage(self.driver)
 
         login.login("kobyd100@gmail.com","zxcvASDF12!@")
         welcome.click_on_side_menu(*WelcomePage.MODElS_SIDE_BAR)
+        model.delete_model()
