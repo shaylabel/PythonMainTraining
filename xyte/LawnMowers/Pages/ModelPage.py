@@ -1,5 +1,9 @@
+from telnetlib import EC
+
+from selenium.common import WebDriverException
 from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.wait import WebDriverWait
 
 from xyte.LawnMowers.Pages.locators import ModelPageLocators
 
@@ -20,10 +24,22 @@ class ModelPage(object):
         model_name.click()
         model_name.clear()
         model_name.send_keys(name_pattern)
-        save_model = self.driver.find_element(*ModelPageLocators.SAVE_MODEL) # to do - add is clickable before click
-        save_model.click()
-
-
+        save_model = self.driver.find_element(*ModelPageLocators.SAVE_MODEL)
+        self.click_on_element_if_clickable(save_model)
 
     def delete_model(self,model_name):
          print('Try to delete model ')
+         model_delete = self.driver.find_element(*ModelPageLocators.DELETE_MODEL)
+
+         self.click_on_element_if_clickable(model_delete)
+
+
+    def click_on_element_if_clickable(self,element_to_click):
+
+        try:
+            element = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((element_to_click)))
+            element.click()
+
+
+        except WebDriverException:
+            print ("Element is not clickable")
