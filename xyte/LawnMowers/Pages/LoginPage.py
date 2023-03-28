@@ -1,7 +1,4 @@
-from selenium.webdriver import Keys
-from selenium.webdriver.common.by import By
 
-from PythonCharm.Python.Selenium.googleall.GogglePages.locators import MainPageLocators
 from xyte.LawnMowers.Pages.locators import LoginPageLocators
 
 

@@ -1,10 +1,7 @@
 from telnetlib import EC
 
 from selenium.common import WebDriverException
-from selenium.webdriver import Keys
-from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
-
 from xyte.LawnMowers.Pages.locators import ModelPageLocators
 
 
@@ -40,6 +37,13 @@ class ModelPage(object):
             element = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((element_to_click)))
             element.click()
 
-
         except WebDriverException:
             print ("Element is not clickable")
+
+    def get_all_models(self):
+        models = []
+        models_amount = 1 # the numbers of models at models page table , to do - set it dynamic
+        for i in range (0,models_amount):
+            models.append("model")       # read the model name from models tables - to do
+
+        return models
