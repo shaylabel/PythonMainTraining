@@ -12,7 +12,7 @@ from xyte.LawnMowers.Pages.WelcomePage import WelcomePage
 def setup(request):
     print("initiating chrome driver")
     driver = webdriver.Chrome(ChromeDriverManager().install())
-    driver.get("https://partners.xyte.io/auth/sign-in")
+    driver.get(Base.url)
     driver.maximize_window()
     driver.implicitly_wait(10)
     request.cls.driver = driver
@@ -32,6 +32,9 @@ class TestAddModel(Base):
         login.login(Base.user_name,Base.pw)
         welcome.click_on_side_menu(*WelcomePage.MODElS_SIDE_BAR)
         model.fill_model(name_to_create)
+        models = model.get_all_models()
+        assert name_to_create in models  ,"model did not found at model table after create not as expected "
+
         model.delete_model(name_to_create)        # needed in order to permit add other models at comming tests
 
     def test_delete_model(self):
@@ -44,3 +47,6 @@ class TestAddModel(Base):
         welcome.click_on_side_menu(*WelcomePage.MODElS_SIDE_BAR)
         model.fill_model(name_to_delete)
         model.delete_model(name_to_delete)
+        models = model.get_all_models()
+
+        assert not name_to_delete in models ,  "model found at model table after delete not as expected "
