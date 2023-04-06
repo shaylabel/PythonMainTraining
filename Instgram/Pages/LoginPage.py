@@ -1,6 +1,5 @@
 from Instgram.Pages.InstgramLocators import LoginPageLocators
 
-
 class LoginPage(object):
 
     def __init__(self, driver):

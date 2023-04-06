@@ -22,7 +22,6 @@ def setup(request):
     yield driver
     driver.close()
 
-
 @pytest.mark.usefixtures("setup")
 class TestGetInstegramDetails(Base):
 

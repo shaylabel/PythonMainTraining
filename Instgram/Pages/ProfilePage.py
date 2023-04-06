@@ -27,7 +27,6 @@ class ProfilePage(object):
         return account_details
 
     # get all user details and return  it as  dictionary (user, name, email ...)
-
     def get_user_details(self):
         edit = self.driver.find_elements(*ProfilePageLocators.EDIT_BTN)
         edit.click()

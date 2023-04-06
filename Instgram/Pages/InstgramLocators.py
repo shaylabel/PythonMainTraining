@@ -5,6 +5,7 @@ class LoginPageLocators(object):
     PW = (By.NAME, 'password')
     LOGIN = (By.CSS_SELECTOR, 'button[class*="_acan _acap"]')
 
+
 class WelcomePageLocators(object):
     pass
 

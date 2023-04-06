@@ -1,8 +1,5 @@
 from selenium.webdriver.common.by import By
 
-from xyte.LawnMowers.Pages.locators import WelcomePageLocators
-
-
 class WelcomePage(object):
 
     def __init__(self, driver):
