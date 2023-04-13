@@ -3,7 +3,7 @@ import json
 import requests
 
 url_base = 'https://petstore.swagger.io/v2/'
-headers = {'Content-Type': 'application/json'}
+headers = {'Content-Type':'application/json'}
 user = {
     "id": 3333,
     "username": "user1",
@@ -19,6 +19,7 @@ user = {
 def test_get_status_code():
     response =requests.get(url_base+'pet/1245')
     assert  response.status_code == 200
+    response.json()
 
 
 def test_get_body():
@@ -29,6 +30,20 @@ def test_get_body():
     name = json_as_dict['category']['name'] # getting field from object as dictionary
     assert name =='xyz'
     assert id == 1245
+
+def test_get_response_list():
+    response = requests.get(url_base+'pet/findByStatus?status=pending')
+    json_pets = response.json()
+    l = len(json_pets)
+    assert len(json_pets) > 0 , 'Pets not found as a response to pending '
+    for pet in range (0,l):
+        id = json_pets[pet]['id']
+        name = json_pets[pet]['name']
+        tags = json_pets[pet]['tags']    # find list per each pet
+        len(tags)
+        # assert len(tags) > 0 , 'tags not found as a body to tested pet '
+
+        print ('\n'+' pet found ,id='+str(id)+',name ='+name)
 
 def test_post():
 
