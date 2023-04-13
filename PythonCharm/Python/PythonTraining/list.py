@@ -2,7 +2,7 @@
 # list of alphabets
 chars = ['a', 'b', 'd', 'e', 'i', 'j', 'o']
 
-for char   in chars :
+for char  in chars :
     print (char)
 # function that filters vowels
 def filterVowels(alphabet):

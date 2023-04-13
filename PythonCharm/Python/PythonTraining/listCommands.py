@@ -18,5 +18,6 @@ alphabets[0] = 'aa'        # replace at index 0
 #scan list
 for x in range (len(alphabets)):
     print('the value at place ',x,'is ',alphabets[x])
-
-
+print ('brfore loop')
+for alphabet in alphabets:
+    print (alphabet)
