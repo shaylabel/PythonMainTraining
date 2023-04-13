@@ -1,0 +1,5 @@
+ CVE-1945:High
+ CVE-2374:High
+ CVE-8541:Low
+ CVE-9964:High
+ CVE-5537:Medium

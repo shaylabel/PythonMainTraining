@@ -10,7 +10,6 @@ from webdriver_manager.chrome import ChromeDriverManager
 class BaseSelenium(object):
     def __init__(self):
         driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
-
         self.driver = driver
 
 

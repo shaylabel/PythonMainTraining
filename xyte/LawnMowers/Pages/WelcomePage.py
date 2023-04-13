@@ -1,7 +1,8 @@
-
+from xyte.LawnMowers.Pages.locators import WelcomePageLocators
 
 
 class WelcomePage(object):
+
 
     def __init__(self, driver):
         self.driver = driver
@@ -9,7 +10,7 @@ class WelcomePage(object):
 
 # method for clicking over any link into side menu
     def click_on_side_menu(self,side_menu):
-        models = self.driver.find_element(side_menu)
+        models = self.driver.find_element(*WelcomePageLocators.MODElS_SIDE_BAR)
         models.click()
 
 

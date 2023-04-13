@@ -21,7 +21,7 @@ class LoginPage(object):
         pw.clear()
         pw.send_keys(pw_pattern)
 
-        login_button.click()
+        login_button.submit()
 
 
 

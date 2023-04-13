@@ -8,12 +8,12 @@ class WelcomePageLocators(object):
 
 
 class LoginPageLocators(object):
-    USER = (By.ID, 'mantine-hlflckkm2')
-    PW = (By.ID, 'mantine-zma8mduxv')
-    LOGIN = (By.CSS_SELECTOR,'span[class*="mantine-14wyo4q"]')
+    USER = (By.NAME, 'username')
+    PW = (By.NAME, 'password')
+    LOGIN = (By.CSS_SELECTOR,'button[class*="_acan"]')
 
 class WelcomePageLocators(object):
-    MODElS_SIDE_BAR = (By.HREF, '/models')
+    MODElS_SIDE_BAR = (By.LINK_TEXT, 'Profile')
 
 class ModelPageLocators(object):
     ADD_MODEL = (By.CSS_SELECTOR, 'span[class*="mantine-1t9xh9a"]')

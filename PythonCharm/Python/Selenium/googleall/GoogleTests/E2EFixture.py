@@ -23,22 +23,6 @@ def fixture_before():
 
 
 
-@pytest.mark.parametrize(
-   'pattern',
-     [
-            ('dog'),
-            ('horse'),
-        ]
-    )
-
-def test_google_multiple(pattern):
-    print ('into test1',pattern)
-    base=BaseSelenium()
-    driver= base.selenium_init("https://www.google.com")
-    main = GoogleMain(driver)
-    main.searchForPattern(pattern)
-    driver.close()
-
 def test_google_cat(fixture_before):
     print ("\n into test2")
     driver= fixture_before
@@ -46,21 +30,20 @@ def test_google_cat(fixture_before):
     main.searchForPattern("cat")
     driver.close()
 
-def test_google_pixture_params(fixture_before):
-    print ("\n into test2")
+def test_google_pixture_no_params_examp1(fixture_before):
+    print ("\n into test3")
     driver= fixture_before
     main = GoogleMain(driver)
     main.searchForPattern('pattern')
     driver.close()
 
 
-def test_google_pixture_params(fixture_before):
+def test_google_pixture_no_params_examp2(fixture_before):
     print ("\n into test2")
     driver= fixture_before
     main = GoogleMain(driver)
     main.search_for_pattern_updated('cat')
     driver.close()
 
-def test_google_pixture_params():
-    print ("\n into test2")
+
 

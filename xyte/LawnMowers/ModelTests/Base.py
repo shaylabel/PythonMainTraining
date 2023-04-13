@@ -1,7 +1,7 @@
 
 class Base(object):
 
-    user_name = 'kobyd100@gmail.com'
+    user_name = 'dkdk100@walla.com'
     pw = 'zxcvASDF12!@'
-    url = 'https://partners.xyte.io/auth/sign-in'
+    url = 'https://www.instagram.com/'
 
